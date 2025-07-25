@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Symbiotic Memory Game - Level 1</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1 class="title">Symbiotic Memory Game</h1>
+  <p id="subtitle" class="subtitle">Click on any box to start</p>
+  <p class="timer">⏱ Time: <span id="time">0</span> seconds</p>
+  <div id="game-board" class="board level1"></div>
+  <div class="leaderboard-button">
+    <a href="leaderboard.html">🏆 Leaderboard</a>
+  </div>
+  
+
+  <audio id="bg-music" loop>
+    <source src="music/pixel-theme.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <h2>🎉 Level 1 Completed!</h2>
+      <p>Enter your name:</p>
+      <input type="text" id="playerName" placeholder="Your name" />
+      <button id="nextLevelBtn">Continue to Level 2</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Leaderboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at center, #1b1b2f, #090909);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      padding-top: 40px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    ol {
+      list-style: decimal;
+      padding: 0 20px;
+      max-width: 400px;
+      width: 100%;
+      text-align: left;
+    }
+
+    li {
+      margin: 8px 0;
+      font-size: 1.2rem;
+      background: rgba(255,255,255,0.05);
+      padding: 10px 15px;
+      border-radius: 10px;
+      transition: background 0.3s;
+    }
+
+    li:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .back-btn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #00ffcc;
+      border: none;
+      border-radius: 10px;
+      color: #000;
+      cursor: pointer;
+    }
+
+    .back-btn:hover {
+      background-color: #00ccaa;
+    }
+  </style>
+</head>
+<body>
+  <h1>🏆 Leaderboard</h1>
+  <ol id="leaderboard"></ol>
+  <button class="back-btn" onclick="window.location.href='index.html'">Back to Game</button>
+
+  <script>
+    const board = document.getElementById("leaderboard");
+    const data = JSON.parse(localStorage.getItem("leaderboard") || "[]");
+
+    if (data.length === 0) {
+      board.innerHTML = "<p>No scores yet.</p>";
+    } else {
+      data.forEach(entry => {
+        const li = document.createElement("li");
+        li.textContent = `${entry.name} — ${entry.time} sec`;
+        board.appendChild(li);
+      });
+    }
+    data.forEach(entry => {
+  const li = document.createElement("li");
+  li.textContent = `${entry.name} — 🧩 L1: ${entry.level1}s | 🚀 L2: ${entry.level2}s | ⏱ Total: ${entry.total}s`;
+  board.appendChild(li);
+});
+
+  </script>
+</body>
+</html>

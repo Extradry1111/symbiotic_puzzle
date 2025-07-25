@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: #fff;
+    text-align: center;
+  }
+  @keyframes gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+  .title {
+    font-size: 3rem;
+    margin-top: 20px;
+    text-shadow: 0 0 15px #00f0ff;
+  }
+  .subtitle {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #ccc;
+  }
+  .timer {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  .board.level1 {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 15px;
+    justify-content: center;
+    margin: 20px auto;
+  }
+  .board.level2 {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 15px;
+    justify-content: center;
+    margin: 20px auto;
+  }
+  .card {
+    width: 100px;
+    height: 100px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,255,255,0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card:hover {
+    box-shadow: 0 0 20px rgba(0,255,255,0.8);
+    transform: scale(1.05);
+  }
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    border-radius: 10px;
+  }
+  .card.flipped img,
+  .card.matched img {
+    display: block;
+  }
+  .popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  .popup.hidden {
+    display: none;
+  }
+  .popup-content {
+    background: #111;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,255,255,0.6);
+    text-align: center;
+  }
+  input {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    margin: 10px 0;
+  }
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    background: #00f0ff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  button:hover {
+    background: #0ff;
+  }
+  .leaderboard-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 10;
+  }
+  
+  .leaderboard-button a {
+    color: #00ffcc;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    background: rgba(255,255,255,0.05);
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .leaderboard-button a:hover {
+    background: rgba(255,255,255,0.2);
+  }
+  .audio-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .audio-controls button {
+    background: rgba(0,0,0,0.3);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 8px;
+  }
+  
+  .audio-controls input[type=range] {
+    width: 100px;
+  }
+  
+  .leaderboard-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 10;
+  }
+  
+  .leaderboard-button a {
+    color: #00ffcc;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    background: rgba(255,255,255,0.05);
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .leaderboard-button a:hover {
+    background: rgba(255,255,255,0.2);
+  }
+  
